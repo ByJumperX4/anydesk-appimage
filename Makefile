@@ -19,10 +19,10 @@ all: clean
 	wget --output-document=$(PWD)/build/build.tar.gz https://download.anydesk.com/linux/anydesk-latest-amd64.tar.gz
 	tar -xvf $(PWD)/build/build.tar.gz -C $(PWD)/build/
 
-	wget --output-document=$(PWD)/build/build.rpmhttps://repo.almalinux.org/almalinux/8/AppStream/x86_64/os/Packages/gtk2-2.24.32-4.el8.x86_64.rpm
+	wget --output-document=$(PWD)/build/build.rpm https://repo.almalinux.org/almalinux/8/AppStream/x86_64/os/Packages/gtk2-2.24.32-4.el8.x86_64.rpm
 	cd $(PWD)/build && rpm2cpio $(PWD)/build/build.rpm | cpio -idmv && cd ..
 
-	wget --output-document=$(PWD)/build/build.rpmhttps://repo.almalinux.org/almalinux/8/AppStream/x86_64/os/Packages/GConf2-3.2.6-22.el8.x86_64.rpm
+	wget --output-document=$(PWD)/build/build.rpm https://repo.almalinux.org/almalinux/8/AppStream/x86_64/os/Packages/GConf2-3.2.6-22.el8.x86_64.rpm
 	cd $(PWD)/build && rpm2cpio $(PWD)/build/build.rpm | cpio -idmv && cd ..
 
 	wget --output-document=$(PWD)/build/build.rpm https://mirror.centos.org/centos/7/os/x86_64/Packages/pango-1.42.4-4.el7_7.x86_64.rpm
