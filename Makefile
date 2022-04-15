@@ -19,19 +19,22 @@ all: clean
 	wget --output-document=$(PWD)/build/build.tar.gz https://download.anydesk.com/linux/anydesk-latest-amd64.tar.gz
 	tar -xvf $(PWD)/build/build.tar.gz -C $(PWD)/build/
 
-	wget --output-document=$(PWD)/build/build.rpm https://repo.almalinux.org/almalinux/8/AppStream/x86_64/os/Packages/gtk2-2.24.32-4.el8.x86_64.rpm
+	wget --output-document=$(PWD)/build/build.rpm https://repo.almalinux.org/vault/8.4/AppStream/x86_64/os/Packages/gtk2-2.24.32-5.el8.x86_64.rpm
 	cd $(PWD)/build && rpm2cpio $(PWD)/build/build.rpm | cpio -idmv && cd ..
 
-	wget --output-document=$(PWD)/build/build.rpm https://repo.almalinux.org/almalinux/8/AppStream/x86_64/os/Packages/GConf2-3.2.6-22.el8.x86_64.rpm
+	wget --output-document=$(PWD)/build/build.rpm https://repo.almalinux.org/vault/8.4/AppStream/x86_64/os/Packages/GConf2-3.2.6-22.el8.x86_64.rpm
 	cd $(PWD)/build && rpm2cpio $(PWD)/build/build.rpm | cpio -idmv && cd ..
 
-	wget --output-document=$(PWD)/build/build.rpm https://mirror.centos.org/centos/7/os/x86_64/Packages/pango-1.42.4-4.el7_7.x86_64.rpm
+	wget --output-document=$(PWD)/build/build.rpm https://vault.centos.org/7.8.2003/os/x86_64/Packages/pango-1.42.4-4.el7_7.x86_64.rpm
 	cd $(PWD)/build && rpm2cpio $(PWD)/build/build.rpm | cpio -idmv && cd ..
 
 	wget --output-document=$(PWD)/build/build.rpm https://download-ib01.fedoraproject.org/pub/epel/7/x86_64/Packages/p/pangox-compat-0.0.2-2.el7.x86_64.rpm
 	cd $(PWD)/build && rpm2cpio $(PWD)/build/build.rpm | cpio -idmv && cd ..
 
 	wget --output-document=$(PWD)/build/build.rpm https://download-ib01.fedoraproject.org/pub/epel/7/x86_64/Packages/g/gtkglext-libs-1.2.0-21.el7.x86_64.rpm
+	cd $(PWD)/build && rpm2cpio $(PWD)/build/build.rpm | cpio -idmv && cd ..
+
+	wget --output-document=$(PWD)/build/build.rpm  https://vault.centos.org/7.8.2003/os/x86_64/Packages/libthai-0.1.14-9.el7.x86_64.rpm
 	cd $(PWD)/build && rpm2cpio $(PWD)/build/build.rpm | cpio -idmv && cd ..
 
 
