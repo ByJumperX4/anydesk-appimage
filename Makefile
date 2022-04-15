@@ -37,6 +37,8 @@ all: clean
 	wget --output-document=$(PWD)/build/build.rpm  https://vault.centos.org/7.8.2003/os/x86_64/Packages/libthai-0.1.14-9.el7.x86_64.rpm
 	cd $(PWD)/build && rpm2cpio $(PWD)/build/build.rpm | cpio -idmv && cd ..
 
+	wget --output-document=$(PWD)/build/build.rpm https://rpmfind.net/linux/mageia/distrib/7/x86_64/media/core/release/lsb-release-2.0-54.mga7.noarch.rpm
+	cd $(PWD)/build && rpm2cpio $(PWD)/build/build.rpm | cpio -idmv && cd ..
 
 	cp --force --recursive $(PWD)/build/usr/* $(PWD)/build/AppDir/
 	cp --force --recursive $(PWD)/build/anydesk-*/* $(PWD)/build/AppDir/anydesk
